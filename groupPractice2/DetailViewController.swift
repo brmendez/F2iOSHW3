@@ -8,30 +8,23 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,  UINavigationControllerDelegate{
+    
+    var personSegue : Person!
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBAction func photoButton(sender: UIButton) {
-        
-        var pickerController = UIImagePickerController
-        info[UIImagePickerControllerOriginalImage]
-        
-//        resignFirstResponder()
-    }
-    
-    
-    
-    var personSegue : Person!
 
+//MARK: Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
+        self.profileImage.image = UIImage(named: "turtleDefault.jpg")
         self.firstNameTextField.text = self.personSegue.firstName
         self.lastNameTextField.text = self.personSegue.lastName
+        }
+    
+    override func viewWillAppear(animated: Bool) {
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -44,15 +37,36 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+//    MARK: Camera
+    @IBAction func selectPicture(sender: AnyObject) {
+        self.revealCamera()
     }
-    */
+    
+    
+    func revealCamera(){
+        var imagePickerController = UIImagePickerController()
+        
+        
+        imagePickerController.delegate = self
+        //checks for camera
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePickerController.allowsEditing = true
+        
+        //shows camera view
+        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
+//MARK: Image Picker
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
+        var editedImage = info[UIImagePickerControllerEditedImage] as UIImage
+        self.personSegue.image = editedImage
+        self.profileImage.image = editedImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController!) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

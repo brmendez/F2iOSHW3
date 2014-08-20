@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var brian = Person(fName: "Brian", lName: "Mendez")
     
     var sectionsArray = ["Students", "Teachers"]
-    var numberOfSectionCounter = 0
+//    var numberOfSectionCounter = 0
     
     
     
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        println(self.numberOfSectionCounter++)
+//        println(self.numberOfSectionCounter++)
         return allArrays[section].count
     }
     
@@ -56,6 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        cell.imageView.image = allArrays[indexPath.section][indexPath.row].image
         cell.textLabel.text = allArrays[indexPath.section][indexPath.row].fullName()
         self.preProfile = allArrays[indexPath.section][indexPath.row]
         return cell

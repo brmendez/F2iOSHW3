@@ -14,6 +14,7 @@
 		19DB6B8619A167400094A08A /* groupPractice2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB6B8519A167400094A08A /* groupPractice2Tests.swift */; };
 		19DB6B9019A168F00094A08A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB6B8F19A168F00094A08A /* Person.swift */; };
 		19DB6B9219A2C46E0094A08A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB6B9119A2C46E0094A08A /* DetailViewController.swift */; };
+		D365A01C19A55563000E7956 /* turtleDefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D365A01B19A55563000E7956 /* turtleDefault.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		19DB6B8519A167400094A08A /* groupPractice2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupPractice2Tests.swift; sourceTree = "<group>"; };
 		19DB6B8F19A168F00094A08A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		19DB6B9119A2C46E0094A08A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D365A01B19A55563000E7956 /* turtleDefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = turtleDefault.jpg; path = ../../../../turtleDefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				19DB6B9119A2C46E0094A08A /* DetailViewController.swift */,
 				19DB6B8F19A168F00094A08A /* Person.swift */,
 				19DB6B7619A1673E0094A08A /* Main.storyboard */,
+				D365A01B19A55563000E7956 /* turtleDefault.jpg */,
 				19DB6B7919A1673F0094A08A /* Images.xcassets */,
 				19DB6B7019A1673E0094A08A /* Supporting Files */,
 			);
@@ -197,6 +200,7 @@
 			files = (
 				19DB6B7819A1673E0094A08A /* Main.storyboard in Resources */,
 				19DB6B7A19A1673F0094A08A /* Images.xcassets in Resources */,
+				D365A01C19A55563000E7956 /* turtleDefault.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
