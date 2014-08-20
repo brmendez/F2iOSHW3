@@ -26,6 +26,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func viewWillAppear(animated: Bool) {
     }
+    //test
     
     override func viewWillDisappear(animated: Bool) {
         self.personSegue.firstName = self.firstNameTextField.text
