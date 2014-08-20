@@ -8,10 +8,20 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate {
     
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBAction func photoButton(sender: UIButton) {
+        
+        var pickerController = UIImagePickerController
+        info[UIImagePickerControllerOriginalImage]
+        
+//        resignFirstResponder()
+    }
+    
+    
     
     var personSegue : Person!
 

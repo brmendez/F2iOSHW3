@@ -403,6 +403,7 @@
 				19DB6B8B19A167400094A08A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19DB6B8C19A167400094A08A /* Build configuration list for PBXNativeTarget "groupPractice2Tests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +412,7 @@
 				19DB6B8E19A167400094A08A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

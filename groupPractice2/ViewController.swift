@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var brian = Person(fName: "Brian", lName: "Mendez")
     
     var sectionsArray = ["Students", "Teachers"]
+    var numberOfSectionCounter = 0
     
     
     
@@ -40,10 +41,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+        println("number of sections in tableview")
         return self.allArrays.count
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        println(self.numberOfSectionCounter++)
         return allArrays[section].count
     }
     
