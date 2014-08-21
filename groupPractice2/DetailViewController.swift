@@ -19,18 +19,25 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 //MARK: Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.profileImage.image = UIImage(named: "turtleDefault.jpg")
+        
         self.firstNameTextField.text = self.personSegue.firstName
         self.lastNameTextField.text = self.personSegue.lastName
+        self.profileImage.image = self.personSegue.image
+        
+        if profileImage.image == nil{
+            println("no picture")
+            self.profileImage.image = UIImage(named: "turtleDefault.jpg")
         }
+    }
     
     override func viewWillAppear(animated: Bool) {
+        
     }
-    //test
-    
+
     override func viewWillDisappear(animated: Bool) {
         self.personSegue.firstName = self.firstNameTextField.text
         self.personSegue.lastName = self.lastNameTextField.text
+        self.personSegue.image = self.profileImage.image
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +70,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         var editedImage = info[UIImagePickerControllerEditedImage] as UIImage
         self.personSegue.image = editedImage
         self.profileImage.image = editedImage
+        
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
